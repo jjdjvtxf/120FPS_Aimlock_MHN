@@ -33,11 +33,11 @@ cat << EOF > ~/.mhn_config/eclipse_profile.json
 EOF
 
 # 2. DIAGNÓSTICO Y CARGA EN MEMORIA
-echo "   CARGANDO CONFIGURACIÓN EN ENTORNO iSH..."
+echo "   CARGANDO CONFIGURACIÓN EN ENTORNO DE PRUEBAS..."
 sleep 1
 
 echo ""
-echo "   INFORMACIÓN DEL ENTORNO iSH:"
+echo "   INFORMACIÓN DEL SISTEMA:"
 echo "  • Arquitectura:      $(uname -m)"
 echo "  • Kernel:            $(uname -r)"
 echo "  • Usuario:           $(whoami)"
@@ -58,5 +58,5 @@ echo "  ✔ Prueba completada: $COUNT operaciones procesadas."
 echo "  ✔ Todos los valores de sensibilidad configurados a 100k."
 echo ""
 echo "================================================="
-echo "   PROCESO FINALIZADO CON ÉXITO EN iSH"
+echo "   PROCESO FINALIZADO CON ÉXITO EN GITHUB ACTIONS"
 echo "================================================="
