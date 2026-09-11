@@ -26,10 +26,10 @@ echo -e "  3) Dual-Axis 100K      (Máxima respuesta en 4 ejes)"
 read -p "Opción [1-3]: " axis_opt
 
 case $axis_opt in
-  1) AXIS_MODE="VERTICAL_BOOST"; X_MULT=50000; Y_MULT=100000 ;;
-  2) AXIS_MODE="HORIZONTAL_BOOST"; X_MULT=100000; Y_MULT=50000 ;;
-  3) AXIS_MODE="DUAL_AXIS_MAX"; X_MULT=100000; Y_MULT=100000 ;;
-  *) AXIS_MODE="DUAL_AXIS_MAX"; X_MULT=100000; Y_MULT=100000 ;;
+  1) AXIS_MODE="VERTICAL_BOOST"; X_MULT=500000; Y_MULT=1000000 ;;
+  2) AXIS_MODE="HORIZONTAL_BOOST"; X_MULT=1000000; Y_MULT=500000 ;;
+  3) AXIS_MODE="DUAL_AXIS_MAX"; X_MULT=1000000; Y_MULT=1000000 ;;
+  *) AXIS_MODE="DUAL_AXIS_MAX"; X_MULT=1000000; Y_MULT=1000000 ;;
 esac
 
 # 4. ESCRITURA EN MEMORIA VOLÁTIL RAM
@@ -41,9 +41,9 @@ axis_x_sensitivity=$X_MULT;
 axis_y_sensitivity=$Y_MULT;
 priority_level=nice_-20;
 kernel_affinity=force_active;
-flick_boost=100000;
+flick_boost=1000000;
 cpu_threads=8;
-touch_hz=100000;
+touch_hz=1000000;
 EOF
 
 # Asignación de prioridad máxima al proceso actual
