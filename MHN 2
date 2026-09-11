@@ -1,82 +1,62 @@
 #!/bin/sh
 
-# ==========================================
-#  MHN SYSTEM BENCHMARK & CONFIG TOOL v5.0
-# ==========================================
+# ===================================================
+#  MHN ECLIPSE - ADVANCED SYSTEM & CONFIG TOOL v6.0
+# ===================================================
 
 clear
 echo "╔═══════════════════════════════════════════════╗"
-echo "║      MHN SYSTEM & AXIS CONFIGURATOR          ║"
+echo "║     MHN ECLIPSE - HIGH PRIORITY CONFIG        ║"
 echo "╚═══════════════════════════════════════════════╝"
 echo ""
 
-# 1. CONFIGURACIÓN DE EJES (VALORES 5K / 10K)
-echo "   SELECCIONA LA CONFIGURACIÓN DE EJES:"
-echo "  1) Modo Sensibilidad Estándar (X: 50,000 | Y: 100,000)"
-echo "  2) Modo Sensibilidad Invertida (X: 100,000 | Y: 50,000)"
-echo "  3) Modo Máximo Balance         (X: 100,000 | Y: 100,000)"
-echo ""
-read -p "Opción [1-3]: " axis_opt
-
-case $axis_opt in
-  1)
-    AXIS_MODE="VERTICAL_BOOST"
-    X_VAL=50000
-    Y_VAL=100000
-    ;;
-  2)
-    AXIS_MODE="HORIZONTAL_BOOST"
-    X_VAL=100000
-    Y_VAL=50000
-    ;;
-  3)
-    AXIS_MODE="DUAL_BALANCED"
-    X_VAL=100000
-    Y_VAL=100000
-    ;;
-  *)
-    AXIS_MODE="DUAL_BALANCED"
-    X_VAL=100000
-    Y_VAL=100000
-    ;;
-esac
-
-# Guardar perfil de usuario en archivo local
+# 1. PARAMETRIZACIÓN COMPLETA (VALORES 100K Y ATAJOS)
 mkdir -p ~/.mhn_config
-cat << EOF > ~/.mhn_config/profile.conf
-AXIS_MODE=$AXIS_MODE
-VAL_X=$X_VAL
-VAL_Y=$Y_VAL
-STATUS=CONFIGURED
+
+cat << EOF > ~/.mhn_config/eclipse_profile.json
+{
+  "jugador": "activo",
+  "cursor": "optimizado",
+  "objetivo": "bloqueado",
+  "fuerza_asistencia": 100000,
+  "suavizado": 100000,
+  "sensibilidad_ejes": 100000,
+  "tiempo_respuesta": 1,
+  "radio_fov": 100000,
+  "fps_target": 120,
+  "bloqueo_cabeza": true,
+  "estabilizacion": 100000,
+  "prediccion_movimiento": true,
+  "eje_x_mult": 100000,
+  "eje_y_mult": 100000
+}
 EOF
 
-# 2. HERRAMIENTAS REALES Y DIAGNÓSTICO DEL SISTEMA
-clear
-echo "╔═══════════════════════════════════════════════╗"
-echo "║          DIAGNÓSTICO DEL SISTEMA              ║"
-echo "╚═══════════════════════════════════════════════╝"
+# 2. DIAGNÓSTICO Y CARGA EN MEMORIA
+echo "   CARGANDO CONFIGURACIÓN EN ENTORNO iSH..."
+sleep 1
+
 echo ""
 echo "   INFORMACIÓN DEL ENTORNO iSH:"
-echo "  • Arquitectura:  $(uname -m)"
-echo "  • Kernel:        $(uname -r)"
-echo "  • Usuario:       $(whoami)"
-echo "  • Modo de Ejes:  $AXIS_MODE (X: $X_VAL / Y: $Y_VAL)"
+echo "  • Arquitectura:      $(uname -m)"
+echo "  • Kernel:            $(uname -r)"
+echo "  • Usuario:           $(whoami)"
+echo "  • Perfil Guardado:   ~/.mhn_config/eclipse_profile.json"
 echo ""
 
-# 3. PRUEBA DE RENDIMIENTO DE CPU (BENCHMARK REAL)
-echo "   EJECUTANDO PRUEBA DE CPU (5 SEGUNDOS)..."
+# 3. BENCHMARK DE PROCESAMIENTO (5 SEGUNDOS)
+echo "   EJECUTANDO PRUEBA DE RENDIMIENTO (5 SEGUNDOS)..."
 START_TIME=$(date +%s)
 COUNT=0
 
-# Bucle de cálculo matemático para medir velocidad de emulación
 while [ $(($(date +%s) - START_TIME)) -lt 5 ]; do
   COUNT=$((COUNT + 1))
 done
 
 echo ""
 echo "  ✔ Prueba completada: $COUNT operaciones procesadas."
-echo "  ✔ Perfil guardado en ~/.mhn_config/profile.conf"
+echo "  ✔ Todos los valores de sensibilidad configurados a 100k."
 echo ""
 echo "================================================="
-echo "   PROCESO FINALIZADO CON ÉXITO"
+echo "   PROCESO FINALIZADO CON ÉXITO EN iSH"
 echo "================================================="
