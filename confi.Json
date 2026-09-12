@@ -9,8 +9,8 @@
     "sensibilidad": 10000.85,
     "modo_alto_rendimiento": true,
     "frecuencia_actualizacion_hz": 120,
-    "memoria_cache_mb": 912,
-    "hilos_procesamiento": 4
+    "memoria_cache_mb": 2048,
+    "hilos_procesamiento": 8
   },
   "interfaz": {
     "modo_oscuro": true,
@@ -18,7 +18,7 @@
     "animaciones_activas": true
   },
   "red": {
-    "tiempo_espera_ms": 3000,
+    "tiempo_espera_ms": 500,
     "reintentos_conexion": 3,
     "servidores": [
       "https://api.principal.com",
