@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "ajustes": {
-    "sensibilidad": 0.85,
+    "sensibilidad": 100.85,
     "modo_oscuro": true,
     "idioma": "es"
   },
