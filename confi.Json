@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "ajustes": {
+    "sensibilidad": 0.85,
+    "modo_oscuro": true,
+    "idioma": "es"
+  },
+  "servidores": [
+    "https://api.principal.com",
+    "https://api.respaldo.com"
+  ]
+}
