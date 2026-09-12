@@ -1,28 +1,46 @@
 {
-  "version": "1.1.0",
-  "aplicacion": {
-    "nombre": "SistemaEclipse",
-    "entorno": "produccion",
-    "idioma": "es"
-  },
-  "rendimiento": {
-    "sensibilidad": 100000.85,
-    "modo_alto_rendimiento": true,
-    "frecuencia_actualizacion_hz": 120,
-    "memoria_cache_mb": 2048,
-    "hilos_procesamiento": 8
-  },
-  "interfaz": {
-    "modo_oscuro": true,
-    "tema": "oscuro_profundo",
-    "animaciones_activas": true
-  },
-  "red": {
-    "tiempo_espera_ms": 500,
-    "reintentos_conexion": 3,
-    "servidores": [
-      "https://api.principal.com",
-      "https://api.respaldo.com"
-    ]
+  "version": "2.0.0",
+  "configuracion_pantalla_tactil": {
+    "flick_multidireccional": {
+      "estado": true,
+      "sensibilidad_maxima": 150000,
+      "ejes": ["arriba", "abajo", "izquierda", "derecha"],
+      "fuerza_respuesta": 150000
+    },
+    "gestos_movimiento": {
+      "modo": "pantalla_tactil",
+      "sensibilidad_gesto": 150000,
+      "patrones": [
+        {
+          "nombre": "eje_vertical",
+          "direccion": ["arriba", "abajo"],
+          "velocidad": 150000
+        },
+        {
+          "nombre": "eje_horizontal",
+          "direccion": ["izquierda", "derecha"],
+          "velocidad": 150000
+        }
+      ]
+    },
+    "macro_tactil": {
+      "estado": true,
+      "modo_ejecucion": "toque_continuo",
+      "frecuencia_hz": 120,
+      "puntos_de_contacto": [
+        {
+          "accion": "toque_primario",
+          "coordenada_x": 500,
+          "coordenada_y": 1200,
+          "presion": 150000
+        },
+        {
+          "accion": "toque_secundario",
+          "coordenada_x": 800,
+          "coordenada_y": 1200,
+          "presion": 150000
+        }
+      ]
+    }
   }
 }
