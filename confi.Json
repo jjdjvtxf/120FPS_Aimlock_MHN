@@ -9,7 +9,7 @@
     "sensibilidad": 10000.85,
     "modo_alto_rendimiento": true,
     "frecuencia_actualizacion_hz": 120,
-    "memoria_cache_mb": 512,
+    "memoria_cache_mb": 912,
     "hilos_procesamiento": 4
   },
   "interfaz": {
