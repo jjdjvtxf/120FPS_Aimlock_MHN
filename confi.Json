@@ -6,7 +6,7 @@
     "idioma": "es"
   },
   "rendimiento": {
-    "sensibilidad": 10000.85,
+    "sensibilidad": 100000.85,
     "modo_alto_rendimiento": true,
     "frecuencia_actualizacion_hz": 120,
     "memoria_cache_mb": 2048,
