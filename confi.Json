@@ -1,12 +1,28 @@
 {
-  "version": "1.0.0",
-  "ajustes": {
-    "sensibilidad": 10000.85,
-    "modo_oscuro": true,
+  "version": "1.1.0",
+  "aplicacion": {
+    "nombre": "SistemaEclipse",
+    "entorno": "produccion",
     "idioma": "es"
   },
-  "servidores": [
-    "https://api.principal.com",
-    "https://api.respaldo.com"
-  ]
+  "rendimiento": {
+    "sensibilidad": 10000.85,
+    "modo_alto_rendimiento": true,
+    "frecuencia_actualizacion_hz": 120,
+    "memoria_cache_mb": 512,
+    "hilos_procesamiento": 4
+  },
+  "interfaz": {
+    "modo_oscuro": true,
+    "tema": "oscuro_profundo",
+    "animaciones_activas": true
+  },
+  "red": {
+    "tiempo_espera_ms": 3000,
+    "reintentos_conexion": 3,
+    "servidores": [
+      "https://api.principal.com",
+      "https://api.respaldo.com"
+    ]
+  }
 }
