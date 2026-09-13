@@ -1,20 +1,44 @@
 {
   "version": "2.2.0",
-  "configuracion_tactil": {
-    "activado": true,
-    "disparador_evento": "AL_TOCAR_PANTALLA",
-    "zona_muerta": {
-      "radio_interno": 0.0,
-      "supresion_exterior": 0.04
+  "configuracion_pantalla_tactil": {
+    "flick_multidireccional": {
+      "estado": true,
+      "sensibilidad_maxima": 150000,
+      "ejes": ["arriba", "abajo", "izquierda", "derecha"],
+      "fuerza_respuesta": 150000
     },
-    "bloqueo_de_ejes": {
-      "filtro_temblor_horizontal": 0.95,
-      "amortiguacion_vertical": 0.20,
-      "multiplicador_friccion_tactil": 2.5
+    "gestos_movimiento": {
+      "modo": "pantalla_tactil",
+      "sensibilidad_gesto": 150000,
+      "patrones": [
+        {
+          "nombre": "eje_vertical",
+          "direccion": ["arriba", "abajo"],
+          "velocidad": 150000
+        },
+        {
+          "nombre": "eje_horizontal",
+          "direccion": ["izquierda", "derecha"],
+          "velocidad": 150000
+        }
+      ]
     },
-    "tasa_de_muestreo": {
-      "forzar_frecuencia_estable": true,
-      "tamano_minimo_dedo": 4.5
+    "multiplicador_de_desplazamiento": {
+      "estado": true,
+      "escalado_entrada_salida": {
+        "distancia_fisica_mm": 1,
+        "distancia_virtual_pixel": 100000,
+        "factor_multiplicador": 1000
+      },
+      "sensibilidad_eje_x": 150000,
+      "sensibilidad_eje_y": 150000
+    },
+    "bloqueo_mira_fijacion": {
+      "estado": true,
+      "filtro_jitter_horizontal": 0.95,
+      "friccion_tactil": 2.50,
+      "suavizado_curva": 1.95,
+      "radio_zona_muerta": 0.05
     }
   }
 }
