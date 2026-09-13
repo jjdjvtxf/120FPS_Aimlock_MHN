@@ -32,13 +32,13 @@
           "accion": "toque_primario",
           "coordenada_x": 5000000,
           "coordenada_y": 12000000,
-          "presion": 1500000
+          "presion": 150000
         },
         {
           "accion": "toque_secundario",
           "coordenada_x": 8000000,
           "coordenada_y": 12000000,
-          "presion": 1500000
+          "presion": 150000
         }
       ]
     }
