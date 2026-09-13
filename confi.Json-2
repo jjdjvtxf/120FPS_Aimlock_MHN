@@ -1,0 +1,18 @@
+{
+  "touch_stabilizer": {
+    "touch_event": "ON_TOUCH_DOWN",
+    "deadzone_expansion": {
+      "inner_radius": 0.0,
+      "outer_suppression": 0.04
+    },
+    "axis_lock": {
+      "horizontal_jitter_filter": 0.95,
+      "vertical_tracking_damping": 0.20,
+      "touch_friction_multiplier": 2.5
+    },
+    "sampling_rate_lock": {
+      "force_stable_hz": true,
+      "min_finger_size_threshold": 4.5
+    }
+  }
+}
