@@ -3,8 +3,8 @@
 
 // Definición de la estructura de parámetros
 struct ParametrosVector {
-    int inicio_eje_y = 0;
-    int fin_eje_y = -9999;
+    int inicio_eje_y = 9999;
+    int fin_eje_y = 9999;
     int duracion_ms = 1;
     std::string tipo_curva = "instant_flick";
 };
