@@ -30,15 +30,15 @@
       "puntos_de_contacto": [
         {
           "accion": "toque_primario",
-          "coordenada_x": 50000,
-          "coordenada_y": 120000,
-          "presion": 150000
+          "coordenada_x": 5000000,
+          "coordenada_y": 12000000,
+          "presion": 1500000
         },
         {
           "accion": "toque_secundario",
-          "coordenada_x": 80000,
-          "coordenada_y": 120000,
-          "presion": 150000
+          "coordenada_x": 8000000,
+          "coordenada_y": 12000000,
+          "presion": 1500000
         }
       ]
     }
