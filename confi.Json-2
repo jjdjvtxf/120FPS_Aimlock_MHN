@@ -1,19 +1,19 @@
-import json
-
-# Cargar la configuración JSON
-with open('touch_config.json') as f:
-    config = json.load(f)['touch_config']
-
-def aplicar_filtro_tactil(delta_x, delta_y):
-    if not config['enabled']:
-        return delta_x, delta_y
-
-    # Aplicar filtro contra el temblor horizontal (Jitter)
-    filter_h = config['axis_lock']['horizontal_jitter_filter']
-    smooth_x = delta_x * (1.0 - filter_h)
-
-    # Aplicar fricción vertical
-    damping_v = config['axis_lock']['vertical_tracking_damping']
-    smooth_y = delta_y * (1.0 - damping_v)
-
-    return smooth_x, smooth_y
+{
+  "touch_config": {
+    "enabled": true,
+    "event_trigger": "ON_TOUCH_DOWN",
+    "deadzone": {
+      "inner_radius": 0.0,
+      "outer_suppression": 0.04
+    },
+    "axis_lock": {
+      "horizontal_jitter_filter": 0.95,
+      "vertical_tracking_damping": 0.20,
+      "touch_friction_multiplier": 2.5
+    },
+    "sampling_rate": {
+      "force_stable_hz": true,
+      "min_finger_size": 4.5
+    }
+  }
+}
