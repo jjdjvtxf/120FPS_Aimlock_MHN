@@ -28,14 +28,14 @@
       "escalado_entrada_salida": {
         "distancia_fisica_mm": 1,
         "distancia_virtual_pixel": 100000,
-        "factor_multiplicador": 100
+        "factor_multiplicador": 1000
       },
       "sensibilidad_eje_x": 150000,
       "sensibilidad_eje_y": 150000
     },
     "ajuste_precision": {
       "estado": true,
-      "suavizado_curva": 0.95,
+      "suavizado_curva": 1.95,
       "radio_zona_muerta": 0.05
     },
     "macro_tactil": {
