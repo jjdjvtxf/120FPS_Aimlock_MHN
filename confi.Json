@@ -6,13 +6,13 @@
     "action": "AUTO_DRAG_UP",
     "vector_parameters": {
       "start_axis_y": 0,
-      "end_axis_y": -9999,
-      "duration_ms": 1,
+      "end_axis_y": -150,
+      "duration_ms": 15,
       "curve": "instant_flick"
     },
     "sensitivity_boost": {
-      "initial_y_multiplier": 999.0,
-      "decay_time_ms": 0
+      "initial_y_multiplier": 3.0,
+      "decay_time_ms": 50
     }
   }
 }
