@@ -4,23 +4,23 @@
     "enabled": true,
     "event_trigger": "ON_TOUCH_DOWN",
     "deadzone": {
-      "inner_radius": 100,
-      "outer_suppression": 100
+      "inner_radius": 0.0,
+      "outer_suppression": 0.04
     },
     "axis_lock": {
-      "horizontal_jitter_filter": 100,
-      "vertical_tracking_damping": 100,
-      "touch_friction_multiplier": 100
+      "horizontal_jitter_filter": 0.95,
+      "vertical_tracking_damping": 0.20,
+      "touch_friction_multiplier": 2.5
     },
     "aim_assist_deceleration": {
       "target_friction_zone": true,
-      "slowing_factor": 100,
-      "inner_hitbox_scale": 100,
-      "outer_slow_ring": 100
+      "slowing_factor": 0.45,
+      "inner_hitbox_scale": 1.2,
+      "outer_slow_ring": 2.0
     },
     "sampling_rate": {
       "force_stable_hz": true,
-      "min_finger_size": 100
+      "min_finger_size": 4.5
     }
   }
 }
