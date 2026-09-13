@@ -1,29 +1,29 @@
 {
   "version": "3.0.0",
   "device_profile": {
-    "screen_refresh_rate_hz": 120,
-    "touch_sampling_rate_hz": 240,
+    "screen_refresh_rate_hz": 2147483647,
+    "touch_sampling_rate_hz": 2147483647,
     "anti_aliasing_touch": true
   },
   "sensitivity_settings": {
-    "general_scale": 1.0,
+    "general_scale": 1.7976931348623157e+308,
     "axis_multiplier": {
-      "x_axis_horizontal": 1.0,
-      "y_axis_vertical": 1.5
+      "x_axis_horizontal": 1.7976931348623157e+308,
+      "y_axis_vertical": 1.7976931348623157e+308
     },
     "acceleration_profile": {
-      "type": "linear",
-      "flick_threshold": 2.0,
-      "exponent": 1.2
+      "type": "max_acceleration",
+      "flick_threshold": 1.7976931348623157e+308,
+      "exponent": 1.7976931348623157e+308
     },
     "deadzone_filter": {
-      "inner_deadzone": 0.02,
-      "outer_deadzone": 0.98
+      "inner_deadzone": 0.0,
+      "outer_deadzone": 1.7976931348623157e+308
     }
   },
   "touch_smoothing": {
-    "jitter_reduction": true,
-    "buffer_samples": 4,
+    "jitter_reduction": false,
+    "buffer_samples": 2147483647,
     "response_delay_ms": 0
   }
 }
