@@ -1,27 +1,42 @@
 {
-  "version": "2.0.0",
+  "version": "2.2.0",
   "configuracion_pantalla_tactil": {
     "flick_multidireccional": {
       "estado": true,
       "sensibilidad_maxima": 150000,
       "ejes": ["arriba", "abajo", "izquierda", "derecha"],
-      "fuerza_respuesta": 100
+      "fuerza_respuesta": 150000
     },
     "gestos_movimiento": {
       "modo": "pantalla_tactil",
-      "sensibilidad_gesto": 100,
+      "sensibilidad_gesto": 150000,
       "patrones": [
         {
           "nombre": "eje_vertical",
           "direccion": ["arriba", "abajo"],
-          "velocidad": 100
+          "velocidad": 150000
         },
         {
           "nombre": "eje_horizontal",
           "direccion": ["izquierda", "derecha"],
-          "velocidad": 100
+          "velocidad": 150000
         }
       ]
+    },
+    "multiplicador_de_desplazamiento": {
+      "estado": true,
+      "escalado_entrada_salida": {
+        "distancia_fisica_mm": 1,
+        "distancia_virtual_pixel": 100000,
+        "factor_multiplicador": 100
+      },
+      "sensibilidad_eje_x": 150000,
+      "sensibilidad_eje_y": 150000
+    },
+    "ajuste_precision": {
+      "estado": true,
+      "suavizado_curva": 0.95,
+      "radio_zona_muerta": 0.05
     },
     "macro_tactil": {
       "estado": true,
@@ -30,15 +45,15 @@
       "puntos_de_contacto": [
         {
           "accion": "toque_primario",
-          "coordenada_x": 5000000,
-          "coordenada_y": 12000000,
-          "presion": 100
+          "coordenada_x": 500,
+          "coordenada_y": 1200,
+          "presion": 150000
         },
         {
           "accion": "toque_secundario",
-          "coordenada_x": 8000000,
-          "coordenada_y": 12000000,
-          "presion": 100
+          "coordenada_x": 800,
+          "coordenada_y": 1200,
+          "presion": 150000
         }
       ]
     }
