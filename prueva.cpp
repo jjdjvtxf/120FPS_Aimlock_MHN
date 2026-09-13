@@ -1,39 +1,43 @@
 #include <iostream>
 #include <string>
 
-// Definición de la estructura de parámetros
-struct ParametrosVector {
-    int inicio_eje_y = 9999;
-    int fin_eje_y = 9999;
-    int duracion_ms = 1;
-    std::string tipo_curva = "instant_flick";
+// Estructura para los parámetros del vector
+struct VectorParameters {
+    int start_axis_y = 0;
+    int end_axis_y = -150;
+    int duration_ms = 15;
+    std::string curve = "instant_flick";
 };
 
-struct IncrementoSensibilidad {
-    double multiplicador_inicial_y = 999.0;
-    int tiempo_decaimiento_ms = 0;
+// Estructura para el incremento de sensibilidad
+struct SensitivityBoost {
+    double initial_y_multiplier = 3.0;
+    int decay_time_ms = 50;
 };
 
-struct ConfiguracionMacro {
-    bool activo = true;
-    std::string disparador = "AL_PRESIONAR_DISPARO";
-    std::string accion = "ARRASTRE_AUTOMATICO_ARRIBA";
-    ParametrosVector vector;
-    IncrementoSensibilidad sensibilidad;
+// Estructura para el bloque principal de la macro
+struct TouchMacro {
+    bool enabled = true;
+    std::string trigger = "ON_FIRE_BUTTON_DOWN";
+    std::string action = "AUTO_DRAG_UP";
+    VectorParameters vector_parameters;
+    SensitivityBoost sensitivity_boost;
 };
 
-struct AjustesTouch {
+// Estructura principal de la configuración
+struct TouchConfig {
     std::string version = "2.2.0";
-    ConfiguracionMacro macro;
+    TouchMacro touch_macro;
 };
 
 int main() {
-    // Instanciación con los valores
-    AjustesTouch config;
+    TouchConfig config;
 
-    // Ejemplo de acceso a los datos en C++
+    // Lectura de los datos cargados en la estructura C++
     std::cout << "Version: " << config.version << std::endl;
-    std::cout << "Desplazamiento Y: " << config.macro.vector.fin_eje_y << std::endl;
+    std::cout << "Trigger: " << config.touch_macro.trigger << std::endl;
+    std::cout << "End Axis Y: " << config.touch_macro.vector_parameters.end_axis_y << std::endl;
+    std::cout << "Initial Y Multiplier: " << config.touch_macro.sensitivity_boost.initial_y_multiplier << std::endl;
 
     return 0;
 }
