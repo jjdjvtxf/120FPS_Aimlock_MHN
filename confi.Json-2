@@ -1,19 +1,20 @@
 {
-  "touch_config": {
-    "enabled": true,
-    "event_trigger": "ON_TOUCH_DOWN",
-    "deadzone": {
-      "inner_radius": 0.0,
-      "outer_suppression": 0.04
+  "version": "2.2.0",
+  "configuracion_tactil": {
+    "activado": true,
+    "disparador_evento": "AL_TOCAR_PANTALLA",
+    "zona_muerta": {
+      "radio_interno": 0.0,
+      "supresion_exterior": 0.04
     },
-    "axis_lock": {
-      "horizontal_jitter_filter": 0.95,
-      "vertical_tracking_damping": 0.20,
-      "touch_friction_multiplier": 2.5
+    "bloqueo_de_ejes": {
+      "filtro_temblor_horizontal": 0.95,
+      "amortiguacion_vertical": 0.20,
+      "multiplicador_friccion_tactil": 2.5
     },
-    "sampling_rate": {
-      "force_stable_hz": true,
-      "min_finger_size": 4.5
+    "tasa_de_muestreo": {
+      "forzar_frecuencia_estable": true,
+      "tamano_minimo_dedo": 4.5
     }
   }
 }
