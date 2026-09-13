@@ -5,21 +5,21 @@
       "estado": true,
       "sensibilidad_maxima": 150000,
       "ejes": ["arriba", "abajo", "izquierda", "derecha"],
-      "fuerza_respuesta": 150000
+      "fuerza_respuesta": 100
     },
     "gestos_movimiento": {
       "modo": "pantalla_tactil",
-      "sensibilidad_gesto": 150000,
+      "sensibilidad_gesto": 100,
       "patrones": [
         {
           "nombre": "eje_vertical",
           "direccion": ["arriba", "abajo"],
-          "velocidad": 150000
+          "velocidad": 100
         },
         {
           "nombre": "eje_horizontal",
           "direccion": ["izquierda", "derecha"],
-          "velocidad": 150000
+          "velocidad": 100
         }
       ]
     },
@@ -32,13 +32,13 @@
           "accion": "toque_primario",
           "coordenada_x": 5000000,
           "coordenada_y": 12000000,
-          "presion": 150000
+          "presion": 100
         },
         {
           "accion": "toque_secundario",
           "coordenada_x": 8000000,
           "coordenada_y": 12000000,
-          "presion": 150000
+          "presion": 100
         }
       ]
     }
