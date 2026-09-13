@@ -1,0 +1,18 @@
+{
+  "version": "2.2.0",
+  "touch_macro": {
+    "enabled": true,
+    "trigger": "ON_FIRE_BUTTON_DOWN",
+    "action": "AUTO_DRAG_UP",
+    "vector_parameters": {
+      "start_axis_y": 0,
+      "end_axis_y": -150,
+      "duration_ms": 10,
+      "curve": "instant_flick"
+    },
+    "sensitivity_boost": {
+      "initial_y_multiplier": 3.0,
+      "decay_time_ms": 25
+    }
+  }
+}
