@@ -4,17 +4,17 @@
     "enabled": true,
     "event_trigger": "ON_TOUCH_DOWN",
     "deadzone": {
-      "inner_radius": 0.0,
-      "outer_suppression": 0.04
+      "inner_radius": 10.0,
+      "outer_suppression": 10.04
     },
     "axis_lock": {
-      "horizontal_jitter_filter": 0.95,
-      "vertical_tracking_damping": 0.20,
-      "touch_friction_multiplier": 2.5
+      "horizontal_jitter_filter": 10.95,
+      "vertical_tracking_damping": 10.20,
+      "touch_friction_multiplier": 20.5
     },
     "sampling_rate": {
       "force_stable_hz": true,
-      "min_finger_size": 4.5
+      "min_finger_size": 14.5
     }
   }
 }
