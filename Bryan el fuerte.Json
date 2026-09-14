@@ -1,0 +1,71 @@
+{
+  "profile_name": "PUBG_Mobile_Pro_Config",
+  "version": "3.2.0",
+  "display_settings": {
+    "target_fps": 120,
+    "screen_refresh_rate_hz": 120,
+    "touch_response_optimization": true,
+    "anti_aliasing": "MSAA_2X",
+    "graphics_quality": "SMOOTH"
+  },
+  "hud_layout_profile": {
+    "preset_name": "4_Finger_Claw",
+    "buttons": [
+      {
+        "action_name": "main_fire_button",
+        "pos_x": 0.85,
+        "pos_y": 0.20,
+        "scale": 1.4,
+        "opacity": 0.85
+      },
+      {
+        "action_name": "aim_down_sights",
+        "pos_x": 0.15,
+        "pos_y": 0.25,
+        "scale": 1.2,
+        "opacity": 0.90
+      },
+      {
+        "action_name": "crouch",
+        "pos_x": 0.80,
+        "pos_y": 0.75,
+        "scale": 1.1,
+        "opacity": 0.70
+      },
+      {
+        "action_name": "prone",
+        "pos_x": 0.90,
+        "pos_y": 0.85,
+        "scale": 1.0,
+        "opacity": 0.60
+      }
+    ]
+  },
+  "camera_sensitivity": {
+    "third_person_no_scope": 120,
+    "first_person_no_scope": 100,
+    "red_dot_holographic": 60,
+    "scope_2x": 36,
+    "scope_3x": 22,
+    "scope_4x": 18,
+    "scope_6x": 12,
+    "scope_8x": 8
+  },
+  "gyroscope_sensitivity": {
+    "enabled": true,
+    "third_person_no_scope": 300,
+    "first_person_no_scope": 300,
+    "red_dot_holographic": 300,
+    "scope_2x": 280,
+    "scope_3x": 220,
+    "scope_4x": 160,
+    "scope_6x": 120,
+    "scope_8x": 80
+  },
+  "touch_responsiveness": {
+    "x_axis_multiplier": 1.0,
+    "y_axis_multiplier": 1.2,
+    "deadzone_inner": 0.01,
+    "deadzone_outer": 0.99
+  }
+}
