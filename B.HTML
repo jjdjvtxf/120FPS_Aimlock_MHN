@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Panel Bryan🔫 - PUBG Mobile Tactical Panel</title>
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@500;700&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-dark: #0e1111;
+    --pubg-yellow: #f3a812;
+    --pubg-orange: #ff5500;
+    --pubg-green: #2ecc71;
+    --pubg-red: #e74c3c;
+    --pubg-dark-card: rgba(18, 22, 20, 0.85);
+    --pubg-border: #2a332c;
+    --glass-border: rgba(243, 168, 18, 0.2);
+    --btn-radius: 4px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    height: 100vh;
+    margin: 0;
+    font-family: 'Rajdhani', sans-serif;
+    color: #e0f7fc;
+    background: var(--bg-dark);
+    overflow-x: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Fondo dinámico estilo radar militar PUBG */
+  body::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: 
+      radial-gradient(circle at 50% 50%, rgba(243, 168, 18, 0.05) 0%, transparent 60%),
+      linear-gradient(rgba(243, 168, 18, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(243, 168, 18, 0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+    transform: perspective(500px) rotateX(60deg);
+    animation: gridMove 25s linear infinite;
+    z-index: 0;
+  }
+
+  @keyframes gridMove {
+    0% { transform: perspective(500px) rotateX(60deg) translateY(0); }
+    100% { transform: perspective(500px) rotateX(60deg) translateY(40px); }
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: 1050px;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Header Táctico PUBG */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--pubg-dark-card);
+    border: 1px solid var(--pubg-yellow);
+    backdrop-filter: blur(16px);
+    padding: 12px 24px;
+    border-radius: 6px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.9), inset 0 0 10px rgba(243, 168, 18, 0.1);
+    margin-bottom: 20px;
+    clip-path: polygon(0 0, 100% 0, 98% 100%, 0 100%);
+  }
+
+  h1 {
+    font-family: 'Teko', sans-serif;
+    font-size: 38px;
+    line-height: 1;
+    margin: 0;
+    text-transform: uppercase;
+    color: var(--pubg-yellow);
+    text-shadow: 0 0 10px rgba(243, 168, 18, 0.5);
+    letter-spacing: 2px;
+  }
+
+  .sub {
+    font-size: 13px;
+    color: #a0aec0;
+    margin-top: 2px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+  }
+
+  /* Main Card */
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 20px;
+    background: var(--pubg-dark-card);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--pubg-border);
+    border-left: 4px solid var(--pubg-yellow);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.95);
+  }
+
+  @media (max-width: 900px) {
+    body { height: auto; padding: 20px 0; }
+    .card { grid-template-columns: 1fr; }
+    .panel { order: 2; }
+    .controls { order: 1; }
+  }
+
+  .controls { display: flex; flex-direction: column; gap: 16px; }
+  .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+
+  /* Buttons Styling */
+  .btn {
+    font-family: 'Teko', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    height: 42px;
+    padding: 0 18px;
+    border-radius: var(--btn-radius);
+    border: 1px solid var(--pubg-yellow);
+    cursor: pointer;
+    color: #000;
+    background: linear-gradient(135deg, var(--pubg-yellow), var(--pubg-orange));
+    box-shadow: 0 0 10px rgba(243, 168, 18, 0.3);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(243, 168, 18, 0.7);
+    filter: brightness(1.2);
+  }
+
+  .btn.small { height: 36px; padding: 0 14px; font-size: 16px; }
+
+  .btn.ghost {
+    background: rgba(0, 0, 0, 0.4);
+    color: var(--pubg-yellow);
+    border: 1px solid rgba(243, 168, 18, 0.4);
+    box-shadow: none;
+  }
+
+  .btn.ghost:hover {
+    background: rgba(243, 168, 18, 0.15);
+    border-color: var(--pubg-yellow);
+    box-shadow: 0 0 15px rgba(243, 168, 18, 0.3);
+  }
+
+  .btn:active { transform: translateY(1px); }
+
+  /* Custom Toggles */
+  .tog {
+    padding: 10px 14px;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--pubg-border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #d1d5db;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+  }
+
+  .tog .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    background: #4b5563;
+    transition: all 0.2s ease;
+  }
+
+  .tog:hover { border-color: rgba(243, 168, 18, 0.4); }
+
+  .tog.on {
+    background: rgba(243, 168, 18, 0.1);
+    border-color: var(--pubg-yellow);
+    color: #fff;
+    box-shadow: 0 0 10px rgba(243, 168, 18, 0.2);
+  }
+
+  .tog.on .dot {
+    background: var(--pubg-yellow);
+    box-shadow: 0 0 8px var(--pubg-yellow);
+  }
+
+  .state-row {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 12px 16px;
+    border-radius: 4px;
+    border: 1px solid var(--pubg-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .state-text { color: var(--pubg-green); font-weight: 700; text-shadow: 0 0 8px rgba(46, 204, 113, 0.4); }
+
+  /* Action Grid */
+  .action-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .action-grid .btn { width: 100%; font-size: 15px; padding: 0; }
+
+  /* Right Panel Sliders */
+  .panel {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 6px;
+    padding: 18px;
+    border: 1px solid var(--pubg-border);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  label {
+    font-size: 13px;
+    color: #9ca3af;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  label strong { color: var(--pubg-yellow); font-family: 'Teko', sans-serif; font-size: 18px; }
+
+  .range {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 2px;
+    background: #1f2937;
+    outline: none;
+    margin-bottom: 16px;
+  }
+
+  .range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    background: var(--pubg-yellow);
+    box-shadow: 0 0 10px var(--pubg-yellow);
+    cursor: pointer;
+    border: 1px solid #000;
+    transition: transform 0.1s;
+  }
+
+  .range::-webkit-slider-thumb:hover { transform: scale(1.2); }
+
+  .stat { font-size: 14px; color: #9ca3af; display: flex; justify-content: space-between; font-weight: 700; text-transform: uppercase; }
+  .stat strong { color: var(--pubg-orange); font-family: 'Teko', sans-serif; font-size: 18px; }
+
+  /* Asset info */
+  .asset {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    background: rgba(0,0,0,0.4);
+    border-radius: 4px;
+    border: 1px solid var(--pubg-border);
+  }
+
+  .asset-icon {
+    width: 38px; height: 38px; border-radius: 4px;
+    background: linear-gradient(45deg, var(--pubg-yellow), var(--pubg-orange));
+    color: #000;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 900; font-family: 'Teko', sans-serif; font-size: 20px;
+    box-shadow: 0 0 10px rgba(243, 168, 18, 0.4);
+  }
+
+  /* Modal Popup */
+  .popup {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(14, 17, 17, 0.98);
+    border: 2px solid var(--pubg-yellow);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.9);
+    color: #fff;
+    padding: 24px;
+    border-radius: 6px;
+    z-index: 10000;
+    backdrop-filter: blur(20px);
+    text-align: center;
+  }
+
+  .popup h3 { font-family: 'Teko'; font-size: 26px; margin-top: 0; color: var(--pubg-yellow); letter-spacing: 1px; }
+  .popup .ok { margin-top: 15px; width: 100%; }
+
+  .muted { color: #6b7280; font-size: 12px; }
+  footer.small { text-align: center; margin-top: 15px; font-size: 12px; color: #6b7280; font-weight: 700; letter-spacing: 1px; }
+</style>
+</head>
+<body>
+
+  <div class="wrap">
+    <header>
+      <div class="title">
+        <h1>Panel Bryan🔫</h1>
+        <div class="sub">PUBG MOBILE // COMBAT & SENSIBILITY OPTIMIZER</div>
+      </div>
+      <div class="row">
+        <button id="applyBtnTop" class="btn small ghost">Aplicar</button>
+        <button id="previewBtnTop" class="btn small">Vista Previa</button>
+      </div>
+    </header>
+
+    <div class="card" role="application">
+      <section class="controls">
+        <div class="row">
+          <button id="load-btn" class="btn small">📥 Cargar Config</button>
+          <button id="save-btn" class="btn small ghost">💾 Guardar Config</button>
+          <div style="flex:1"></div>
+          <div id="masterStatus" class="tog" title="Estado global"><span class="dot"></span> <strong>INACTIVO</strong></div>
+        </div>
+
+        <div class="row">
+          <div id="no-recoil" class="tog"><span class="dot"></span> Sin Retroceso <span style="margin-left:auto;color:var(--pubg-orange)" id="no-recoil-txt">OFF</span></div>
+          <div id="flick" class="tog"><span class="dot"></span> Giro Rápido 180° <span style="margin-left:auto;color:var(--pubg-green)" id="flick-txt">OFF</span></div>
+          <div id="lock-aim" class="tog"><span class="dot"></span> Bloq. Mira en Cabeza <span style="margin-left:auto;color:var(--pubg-yellow)" id="lock-aim-txt">OFF</span></div>
+        </div>
+
+        <div class="state-row">
+          <div class="stat">Estado Sistema: &nbsp;<strong id="stateText" class="state-text">Inactivo</strong></div>
+          <div style="display:flex;gap:8px;">
+            <button id="modePro" class="btn ghost small">Modo Pro</button>
+            <button id="reset" class="btn small ghost">Reset</button>
+          </div>
+        </div>
+
+        <div class="action-grid">
+          <button class="btn" id="btn1">Sin Retroceso</button>
+          <button class="btn ghost" id="btn2">Giro Rápido</button>
+          <button class="btn" id="btn3">Aim Lock</button>
+          <button class="btn ghost" id="btn4">iOS Bypass</button>
+          <button class="btn" id="btn5">Modo Pro</button>
+          <button class="btn ghost" id="btn6">Reset</button>
+        </div>
+
+        <small class="muted">⚡ Consejo PUBG: Ajusta los FPS al máximo de tu dispositivo para evitar desincronización de disparos.</small>
+
+        <div class="asset">
+          <div class="asset-icon">PUBG</div>
+          <div>
+            <div style="font-weight:700; color:#fff">Bryan Core Engine v2.0</div>
+            <div style="font-size:11px;color:var(--pubg-yellow)">Estado: Listo para Combate</div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="panel">
+        <div>
+          <label for="dpi">Sensibilidad DPI <strong id="dpiVal">2400</strong></label>
+          <input id="dpi" class="range" type="range" min="100" max="2400" step="1" value="2400">
+
+          <label for="fps">Límite FPS <strong id="fpsVal">144</strong></label>
+          <input id="fps" class="range" type="range" min="30" max="540" step="1" value="144">
+
+          <label for="hz">Tasa Respuesta (Hz) <strong id="hzVal">120</strong></label>
+          <input id="hz" class="range" type="range" min="60" max="540" step="1" value="120">
+
+          <label for="config">Renderizado Gráfico <strong id="cfgVal">Bajo</strong></label>
+          <input id="config" class="range" type="range" min="1" max="4" step="1" value="1">
+
+          <div class="stat" style="margin-top: 10px;">
+            <span>Multiplicador de Sensibilidad</span>
+            <strong id="repVal">2x</strong>
+          </div>
+          <input id="reps" class="range" type="range" min="1" max="100" step="1" value="2">
+        </div>
+
+        <div>
+          <div style="display:flex;justify-content:space-between;gap:8px; margin-top: 10px;">
+            <button id="applyBtn" class="btn ghost small" style="flex:1">Aplicar</button>
+            <button id="previewBtn" class="btn small" style="flex:1">Vista Previa</button>
+          </div>
+
+          <div style="font-size:12px; color:#9ca3af; margin-top:12px; display:flex; align-items:center; justify-content:space-between">
+            <span>Alertas HUD:</span>
+            <input type="checkbox" id="notify" checked style="accent-color: var(--pubg-yellow);">
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <footer class="small">PANEL BRYAN🔫 • SISTEMA DE AJUSTES TÁCTICOS PARA PUBG MOBILE</footer>
+  </div>
+
+  <div id="popup" class="popup" style="display:none;">
+    <h3>✅ PARAMETROS APLICADOS</h3>
+    <p id="popup-msg" style="color:#9ca3af; font-size:14px;">Se optimizaron los ajustes para PUBG Mobile.</p>
+    <button id="popup-ok" class="btn ok">Aceptar</button>
+  </div>
+
+<script>
+/* =========================
+   Lógica funcional del panel
+   ========================= */
+
+const state = {
+  noRecoil: false,
+  flick: false,
+  lockAim: false,
+  iosOn: false,
+  modeProActive: false,
+  appliedConfig: null,
+  previewActive: false,
+  dpi: 2400,
+  fps: 144,
+  hz: 120,
+  configLevel: 1,
+  reps: 2,
+  notify: true
+};
+
+/* Element refs */
+const masterStatus = document.getElementById('masterStatus');
+const stateText = document.getElementById('stateText');
+const noRecoilEl = document.getElementById('no-recoil');
+const flickEl = document.getElementById('flick');
+const lockAimEl = document.getElementById('lock-aim');
+const noRecoilTxt = document.getElementById('no-recoil-txt');
+const flickTxt = document.getElementById('flick-txt');
+const lockAimTxt = document.getElementById('lock-aim-txt');
+
+const applyBtn = document.getElementById('applyBtn');
+const previewBtn = document.getElementById('previewBtn');
+const applyBtnTop = document.getElementById('applyBtnTop');
+const previewBtnTop = document.getElementById('previewBtnTop');
+const loadBtn = document.getElementById('load-btn');
+const saveBtn = document.getElementById('save-btn');
+const modeProBtn = document.getElementById('modePro');
+const resetBtn = document.getElementById('reset');
+const previewPopup = document.getElementById('popup');
+const popupOk = document.getElementById('popup-ok');
+const popupMsg = document.getElementById('popup-msg');
+
+const dpiEl = document.getElementById('dpi'), fpsEl = document.getElementById('fps'), hzEl = document.getElementById('hz'), cfgEl = document.getElementById('config'), repsEl = document.getElementById('reps'), notifyEl = document.getElementById('notify');
+const dpiVal = document.getElementById('dpiVal'), fpsVal = document.getElementById('fpsVal'), hzVal = document.getElementById('hzVal'), cfgVal = document.getElementById('cfgVal'), repVal = document.getElementById('repVal');
+
+/* helper to update master state UI */
+function updateMasterUI(){
+  const active = state.noRecoil || state.flick || state.lockAim || state.iosOn || state.modeProActive;
+  masterStatus.classList.toggle('on', active);
+  masterStatus.querySelector('strong').textContent = active ? 'ACTIVO' : 'INACTIVO';
+  stateText.textContent = active ? 'Activo' : 'Inactivo';
+}
+
+/* helper to set toggles visually and text */
+function setToggle(el, bool, txtEl=null){
+  el.classList.toggle('on', !!bool);
+  if(txtEl) txtEl.textContent = bool ? 'ON' : 'OFF';
+  updateMasterUI();
+}
+
+/* toggle click handlers */
+noRecoilEl.addEventListener('click', ()=> {
+  state.noRecoil = !state.noRecoil;
+  setToggle(noRecoilEl, state.noRecoil, noRecoilTxt);
+});
+flickEl.addEventListener('click', ()=> {
+  state.flick = !state.flick;
+  setToggle(flickEl, state.flick, flickTxt);
+});
+lockAimEl.addEventListener('click', ()=> {
+  state.lockAim = !state.lockAim;
+  setToggle(lockAimEl, state.lockAim, lockAimTxt);
+});
+
+/* grid buttons map to toggles */
+document.getElementById('btn1').addEventListener('click', ()=> noRecoilEl.click());
+document.getElementById('btn2').addEventListener('click', ()=> flickEl.click());
+document.getElementById('btn3').addEventListener('click', ()=> lockAimEl.click());
+document.getElementById('btn4').addEventListener('click', ()=> { state.iosOn = !state.iosOn; alert('iOS Bypass: ' + (state.iosOn ? 'ACTIVADO (Simulado)': 'DESACTIVADO')); updateMasterUI();});
+document.getElementById('btn5').addEventListener('click', ()=> modeProBtn.click());
+document.getElementById('btn6').addEventListener('click', ()=> resetBtn.click());
+
+/* mode pro: activate everything with high presets */
+modeProBtn.addEventListener('click', ()=> {
+  state.modeProActive = !state.modeProActive;
+  if(state.modeProActive){
+    state.noRecoil = true; state.flick = true; state.lockAim = true; state.iosOn = true;
+    state.dpi = 2400; state.fps = 540; state.hz = 540; state.configLevel = 4; state.reps = 8;
+    dpiEl.value = state.dpi; fpsEl.value = state.fps; hzEl.value = state.hz; cfgEl.value = state.configLevel; repsEl.value = state.reps;
+    setToggle(noRecoilEl, true, noRecoilTxt); setToggle(flickEl, true, flickTxt); setToggle(lockAimEl, true, lockAimTxt);
+    modeProBtn.textContent = 'Modo Pro: ON';
+    modeProBtn.classList.add('btn'); modeProBtn.classList.remove('ghost');
+  } else {
+    modeProBtn.textContent = 'Modo Pro';
+    modeProBtn.classList.remove('btn'); modeProBtn.classList.add('ghost');
+  }
+  updateUIValues();
+  updateMasterUI();
+});
+
+/* reset: turn everything off and restore defaults */
+resetBtn.addEventListener('click', ()=> {
+  if(!confirm('Resetear todo a valores iniciales?')) return;
+  state.noRecoil = false; state.flick = false; state.lockAim = false; state.iosOn = false; state.modeProActive = false;
+  state.dpi = 2400; state.fps = 144; state.hz = 120; state.configLevel = 1; state.reps = 2;
+  dpiEl.value = state.dpi; fpsEl.value = state.fps; hzEl.value = state.hz; cfgEl.value = state.configLevel; repsEl.value = state.reps;
+  setToggle(noRecoilEl, false, noRecoilTxt); setToggle(flickEl, false, flickTxt); setToggle(lockAimEl, false, lockAimTxt);
+  modeProBtn.textContent = 'Modo Pro'; modeProBtn.classList.remove('btn'); modeProBtn.classList.add('ghost');
+  updateUIValues();
+  updateMasterUI();
+  localStorage.removeItem('bryan_panel_config');
+});
+
+/* sliders sync */
+function updateUIValues(){
+  dpiVal.textContent = state.dpi; fpsVal.textContent = state.fps; hzVal.textContent = state.hz; cfgVal.textContent = ['Bajo','Medio','Alto','Ultra'][state.configLevel-1]; repVal.textContent = state.reps + 'x';
+}
+dpiEl.addEventListener('input', ()=> { state.dpi = +dpiEl.value; updateUIValues(); });
+fpsEl.addEventListener('input', ()=> { state.fps = +fpsEl.value; updateUIValues(); });
+hzEl.addEventListener('input', ()=> { state.hz = +hzEl.value; updateUIValues(); });
+cfgEl.addEventListener('input', ()=> { state.configLevel = +cfgEl.value; updateUIValues(); });
+repsEl.addEventListener('input', ()=> { state.reps = +repsEl.value; updateUIValues(); });
+notifyEl.addEventListener('change', ()=> { state.notify = notifyEl.checked; });
+
+/* Apply */
+function applyConfig(){
+  state.appliedConfig = {...state};
+  popupMsg.textContent = `FPS ${state.fps} • HZ ${state.hz} • DPI ${state.dpi} • Gráficos ${state.configLevel === 4 ? 'Ultra' : state.configLevel}`;
+  previewPopup.style.display = 'block';
+  try {
+    localStorage.setItem('bryan_panel_config', JSON.stringify(state.appliedConfig));
+  } catch(e){ console.warn('No se pudo guardar localmente', e); }
+  if(state.notify) setTimeout(()=> hidePopup(), 2200);
+}
+applyBtn.addEventListener('click', applyConfig);
+applyBtnTop.addEventListener('click', applyConfig);
+
+/* Preview */
+function previewConfig(){
+  state.previewActive = !state.previewActive;
+  if(state.previewActive){
+    popupMsg.textContent = `Vista previa: FPS ${state.fps} • HZ ${state.hz}`;
+    previewPopup.style.display = 'block';
+    setTimeout(()=> { previewPopup.style.display = 'none'; state.previewActive = false; }, 1500);
+  } else {
+    previewPopup.style.display = 'none';
+  }
+}
+previewBtn.addEventListener('click', previewConfig);
+previewBtnTop.addEventListener('click', previewConfig);
+
+popupOk.addEventListener('click', hidePopup);
+function hidePopup(){ previewPopup.style.display = 'none'; }
+
+/* Load and Save */
+loadBtn.addEventListener('click', ()=> {
+  const saved = localStorage.getItem('bryan_panel_config');
+  if(!saved){ alert('No hay configuración guardada.'); return;}
+  const cfg = JSON.parse(saved);
+  state.noRecoil = cfg.noRecoil; state.flick = cfg.flick; state.lockAim = cfg.lockAim; state.iosOn = cfg.iosOn; state.modeProActive = cfg.modeProActive;
+  state.dpi = cfg.dpi; state.fps = cfg.fps; state.hz = cfg.hz; state.configLevel = cfg.configLevel; state.reps = cfg.reps;
+  dpiEl.value = state.dpi; fpsEl.value = state.fps; hzEl.value = state.hz; cfgEl.value = state.configLevel; repsEl.value = state.reps;
+  setToggle(noRecoilEl, state.noRecoil, noRecoilTxt); setToggle(flickEl, state.flick, flickTxt); setToggle(lockAimEl, state.lockAim, lockAimTxt);
+  updateUIValues(); updateMasterUI();
+  alert('Configuración de PUBG cargada.');
+});
+
+saveBtn.addEventListener('click', ()=> {
+  try { localStorage.setItem('bryan_panel_config', JSON.stringify(state)); alert('Guardado localmente.'); }
+  catch(e){ alert('Error guardando: ' + e.message); }
+});
+
+/* press-and-hold */
+let loadTimer;
+loadBtn.addEventListener('mousedown', ()=>{ loadTimer = setTimeout(()=>{ simulateMiniLoad(true); }, 700); });
+loadBtn.addEventListener('mouseup', ()=>{ clearTimeout(loadTimer); });
+
+function simulateMiniLoad(quick){
+  const container = document.createElement('div');
+  container.style.position='fixed';container.style.left='50%';container.style.top='50%';
+  container.style.transform='translate(-50%,-50%)';container.style.zIndex=9999;
+  container.style.padding='16px 24px';container.style.borderRadius='4px';
+  container.style.background='rgba(14,17,17,0.98)';
+  container.style.border='1px solid var(--pubg-yellow)'; container.style.color='#fff';
+  container.innerHTML = '<div style="font-family:Teko;font-size:18px;margin-bottom:8px;text-align:center;color:var(--pubg-yellow)">CARGANDO SCRIPT PUBG...</div><div style="height:6px;background:#111;border-radius:2px;overflow:hidden;width:200px"><div id="miniBar" style="width:0%;height:6px;background:var(--pubg-yellow);"></div></div>';
+  document.body.appendChild(container);
+  let p=0; const step = quick ? 12 : 4;
+  const it = setInterval(()=>{ p+=step; if(p>100) p=100; container.querySelector('#miniBar').style.width = p + '%'; if(p===100){ clearInterval(it); setTimeout(()=>document.body.removeChild(container), 400);} }, 30);
+}
+
+function init(){
+  setToggle(noRecoilEl, false, noRecoilTxt); setToggle(flickEl, false, flickTxt); setToggle(lockAimEl, false, lockAimTxt);
+  updateUIValues();
+  updateMasterUI();
+}
+init();
+
+document.addEventListener('keydown', (e)=> {
+  if(e.key === '1') noRecoilEl.click();
+  if(e.key === '2') flickEl.click();
+  if(e.key === '3') lockAimEl.click();
+  if(e.key === 'p') previewBtn.click();
+  if(e.key === 'a') applyBtn.click();
+});
+</script>
+</body>
+</html>
