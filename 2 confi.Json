@@ -1,18 +1,115 @@
 {
-  "version": "2.2.0",
-  "touch_macro": {
-    "enabled": true,
-    "trigger": "ON_FIRE_BUTTON_DOWN",
-    "action": "AUTO_DRAG_UP",
-    "vector_parameters": {
-      "start_axis_y": 0,
-      "end_axis_y": -150,
-      "duration_ms": 15,
-      "curve": "instant_flick"
+  "modulo_matriz_gestos": {
+    "version_modulo": "2.2.0-alpha",
+    "estado_modulo": true,
+    "frecuencia_muestreo_hz": 120,
+    "flicks_direccionales": {
+      "flick_superior": {
+        "identificador": "FLICK_UP_AXIS",
+        "activado": true,
+        "sensibilidad_inicial": 150000,
+        "sensibilidad_pico": 150000,
+        "multiplicador_aceleracion": 3.0,
+        "vector_desplazamiento": {
+          "eje_x_inicio": 0,
+          "eje_y_inicio": 0,
+          "eje_x_final": 0,
+          "eje_y_final": -150000,
+          "duracion_ms": 15
+        },
+        "curva_respuesta": "instant_flick",
+        "zona_muerta_porcentaje": 0.01,
+        "suavizado": {
+          "filtro_interpolacion": true,
+          "factor_suavizado": 0.95
+        }
+      },
+      "flick_inferior": {
+        "identificador": "FLICK_DOWN_AXIS",
+        "activado": true,
+        "sensibilidad_inicial": 150000,
+        "sensibilidad_pico": 150000,
+        "multiplicador_aceleracion": 3.0,
+        "vector_desplazamiento": {
+          "eje_x_inicio": 0,
+          "eje_y_inicio": 0,
+          "eje_x_final": 0,
+          "eje_y_final": 150000,
+          "duracion_ms": 15
+        },
+        "curva_respuesta": "instant_flick",
+        "zona_muerta_porcentaje": 0.01,
+        "suavizado": {
+          "filtro_interpolacion": true,
+          "factor_suavizado": 0.95
+        }
+      },
+      "flick_izquierdo": {
+        "identificador": "FLICK_LEFT_AXIS",
+        "activado": true,
+        "sensibilidad_inicial": 150000,
+        "sensibilidad_pico": 150000,
+        "multiplicador_aceleracion": 3.0,
+        "vector_desplazamiento": {
+          "eje_x_inicio": 0,
+          "eje_y_inicio": 0,
+          "eje_x_final": -150000,
+          "eje_y_final": 0,
+          "duracion_ms": 15
+        },
+        "curva_respuesta": "instant_flick",
+        "zona_muerta_porcentaje": 0.01,
+        "suavizado": {
+          "filtro_interpolacion": true,
+          "factor_suavizado": 0.95
+        }
+      },
+      "flick_derecho": {
+        "identificador": "FLICK_RIGHT_AXIS",
+        "activado": true,
+        "sensibilidad_inicial": 150000,
+        "sensibilidad_pico": 150000,
+        "multiplicador_aceleracion": 3.0,
+        "vector_desplazamiento": {
+          "eje_x_inicio": 0,
+          "eje_y_inicio": 0,
+          "eje_x_final": 150000,
+          "eje_y_final": 0,
+          "duracion_ms": 15
+        },
+        "curva_respuesta": "instant_flick",
+        "zona_muerta_porcentaje": 0.01,
+        "suavizado": {
+          "filtro_interpolacion": true,
+          "factor_suavizado": 0.95
+        }
+      }
     },
-    "sensitivity_boost": {
-      "initial_y_multiplier": 3.0,
-      "decay_time_ms": 50
+    "gestos_diagonales": {
+      "diagonal_superior_derecha": {
+        "activado": true,
+        "sensibilidad": 150000,
+        "angulo_grados": 45,
+        "vector": { "x": 106066, "y": -106066 }
+      },
+      "diagonal_superior_izquierda": {
+        "activado": true,
+        "sensibilidad": 150000,
+        "angulo_grados": 135,
+        "vector": { "x": -106066, "y": -106066 }
+      },
+      "diagonal_inferior_derecha": {
+        "activado": true,
+        "sensibilidad": 150000,
+        "angulo_grados": 315,
+        "vector": { "x": 106066, "y": 106066 }
+      },
+      "diagonal_inferior_izquierda": {
+        "activado": true,
+        "sensibilidad": 150000,
+        "angulo_grados": 225,
+        "vector": { "x": -106066, "y": 106066 }
+      }
     }
   }
 }
