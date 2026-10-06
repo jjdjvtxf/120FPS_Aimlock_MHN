@@ -5,8 +5,8 @@
     "trigger": "ON_FIRE_BUTTON_DOWN",
     "action": "AUTO_DRAG_UP",
     "vector_parameters": {
-      "start_axis_y": 10,
-      "end_axis_y": -100,
+      "start_axis_y": 150,
+      "end_axis_y": -200,
       "duration_ms": 0.5,
       "curve": "instant_flick"
     },
