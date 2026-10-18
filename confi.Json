@@ -9,7 +9,7 @@
       "end_axis_y": -100,
       "duration_ms": 0.3,
       "curve": "instant_flick"
-      ”aim_lock" : 50
+      ”aimlock" : 50
     },
     "sensitivity_boost": {
       "initial_y_multiplier": 3.0,
