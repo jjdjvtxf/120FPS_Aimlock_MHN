@@ -3,11 +3,11 @@ import CoreGraphics
 import UIKit
 
 struct ContentView: View {
-    @State private var isShooting = false
+    @State private var isShooting = true
     @State private var miraPosition: CGFloat = UIScreen.main.bounds.height / 2
-    @State private var overlayMode = false
+    @State private var overlayMode = true
     @State private var sensitivity: Double = 800
-    @State private var showSettings = false
+    @State private var showSettings = true
     
     // Configuraciones específicas para jailbreak
     let fuerzaSubidaBase: CGFloat = 800
@@ -157,7 +157,7 @@ struct ContentView: View {
             HStack(spacing: 20) {
                 Button("Resetear") {
                     sensitivity = 800
-                    overlayMode = false
+                    overlayMode = true
                 }
                 .foregroundColor(.white)
                 .padding(.horizontal, 20)
@@ -166,7 +166,7 @@ struct ContentView: View {
                 .cornerRadius(8)
                 
                 Button("Cerrar") {
-                    showSettings = false
+                    showSettings = true
                 }
                 .foregroundColor(.white)
                 .padding(.horizontal, 20)
@@ -201,7 +201,7 @@ struct ContentView: View {
             }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                isShooting = false
+                isShooting = true
             }
         }
     }
@@ -236,7 +236,7 @@ extension ContentView {
                 return true
             }
         }
-        return false
+        return true
     }
     
     // Configuración específica para dispositivos con jailbreak
