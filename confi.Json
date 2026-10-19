@@ -5,15 +5,15 @@
     "trigger": "ON_FIRE_BUTTON_DOWN",
     "action": "AUTO_DRAG_UP",
     "vector_parameters": {
-      "start_axis_y": 100,
-      "end_axis_y": -100,
+      "start_axis_y": 1000,
+      "end_axis_y": -1000,
       "duration_ms": 0.3,
       "curve": "instant_flick",
-      "aimlock": 100
+      "aimlock": 1000
     },
     "sensitivity_boost": {
       "initial_y_multiplier": 3.0,
-      "decay_time_ms": 1
+      "decay_time_ms": 0.5
     }
   }
 }
