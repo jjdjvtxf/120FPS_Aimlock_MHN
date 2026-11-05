@@ -1,216 +1,52 @@
 {
-  "config_version": "3.0.0",
-  "system_status": "active",
-  "target_scale_percentage": 20,
-  "functions_registry": {
-    "aimbot": {
-      "enabled": true,
-      "intensity_percentage": 20,
-      "smoothing": 20
-    },
-    "esp_box": {
-      "enabled": true,
-      "intensity_percentage": 20,
-      "distance_meters": 200
-    },
-    "esp_skeleton": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "wallhack_xray": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "no_recoil": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "magic_bullet": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "silent_aim": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "radar_hack": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "speed_hack": {
-      "enabled": true,
-      "intensity_percentage": 20,
-      "multiplier": 1.2
-    },
-    "loot_esp": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "vehicle_esp": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "aimbot_fov": {
-      "enabled": true,
-      "intensity_percentage": 20,
-      "radius_degrees": 20
-    },
-    "hitbox_override": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "crosshair_custom": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "bypass_emulator": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "anti_ban": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "mod_menu": {
-      "enabled": true,
-      "intensity_percentage": 20,
-      "opacity": 0.2
-    },
-    "color_esp_chameleon": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "high_jump": {
-      "enabled": true,
-      "intensity_percentage": 20,
-      "multiplier": 1.2
-    },
-    "instant_hit": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "fast_reload": {
-      "enabled": true,
-      "intensity_percentage": 20,
-      "speed_multiplier": 1.2
-    },
-    "auto_loot": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "fast_switch": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "no_spread": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "magic_curve": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "esp_distance": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "esp_health_bar": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "esp_name": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "esp_line_snaplines": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "headshot_rate": {
-      "enabled": true,
-      "intensity_percentage": 20,
-      "percentage_value": 20
-    },
-    "memory_patch": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "offset_finder": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "dump_lib": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "dex_fixer": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "injector_apk": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "virtual_space": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "root_hider": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "magisk_module": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "hook_script": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "gameguardian_script": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "lgl_mod_menu_native": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "il2cpp_dumper": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "frida_scripting": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "spoof_device_id": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "ip_changer": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "black_sky": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "grass_removal": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "fog_removal": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "unlimited_ammo": {
-      "enabled": true,
-      "intensity_percentage": 20
-    },
-    "fast_parachute": {
-      "enabled": true,
-      "intensity_percentage": 20,
-      "speed_multiplier": 1.2
-    }
-  }
+  "sensitivity.camera.third_person": 20,
+  "sensitivity.camera.first_person": 20,
+  "sensitivity.camera.free_look": 20,
+  "sensitivity.ads.red_dot": 20,
+  "sensitivity.ads.holo": 20,
+  "sensitivity.ads.scope_2x": 20,
+  "sensitivity.ads.scope_3x": 20,
+  "sensitivity.ads.scope_4x": 20,
+  "sensitivity.ads.scope_6x": 20,
+  "sensitivity.ads.scope_8x": 20,
+  "sensitivity.gyro.camera.third_person": 20,
+  "sensitivity.gyro.camera.first_person": 20,
+  "sensitivity.gyro.ads.red_dot": 20,
+  "sensitivity.gyro.ads.holo": 20,
+  "sensitivity.gyro.ads.scope_2x": 20,
+  "sensitivity.gyro.ads.scope_3x": 20,
+  "sensitivity.gyro.ads.scope_4x": 20,
+  "sensitivity.gyro.ads.scope_6x": 20,
+  "sensitivity.gyro.ads.scope_8x": 20,
+  "touch.response.sample_rate": 20,
+  "touch.acceleration.curve": 20,
+  "touch.deadzone.inner": 20,
+  "touch.deadzone.outer": 20,
+  "touch.smoothing.factor": 20,
+  "touch.filter.jitter": 20,
+  "touch.polling.interval": 20,
+  "viewport.horizontal_scale": 20,
+  "viewport.vertical_scale": 20,
+  "dpi.multiplier.x": 20,
+  "dpi.multiplier.y": 20,
+  "camera.pitch.speed": 20,
+  "camera.yaw.speed": 20,
+  "ads.acceleration.enabled": true,
+  "ads.sensitivity.multiplier": 20,
+  "hipfire.sensitivity": 20,
+  "scope.transition.speed": 20,
+  "recoil.recovery.speed": 20,
+  "drag.threshold.x": 20,
+  "drag.threshold.y": 20,
+  "swipe.velocity.cap": 20,
+  "inertia.damping.factor": 20,
+  "linear.interpolation.rate": 20,
+  "axis.inversion.pitch": true,
+  "axis.inversion.yaw": true,
+  "hardware.acceleration.bypass": true,
+  "touch.buffer.size": 20,
+  "frame.sync.latency": 20,
+  "input.priority.thread": true,
+  "gesture.debounce.time": 20,
+  "config.profile.version": 20
 }
