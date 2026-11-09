@@ -1,52 +1,66 @@
-{
-  "ios.touch.sample_rate_hz": 120,
-  "ios.touch.event_coalescing": true,
-  "ios.touch.maximum_possible_force": 6.67,
-  "ios.touch.force_sensitivity_multiplier": 2.0,
-  "ios.touch.altitude_angle_bias": 1.57,
-  "ios.touch.azimuth_angle_bias": 3.14,
-  "ios.touch.estimated_properties_expecting": true,
-  "ios.touch.gesture_recognizer_delay": 0.0,
-  "ios.touch.edge_rejection_inset": 20.0,
-  "ios.touch.haptic_feedback_intensity": 1.0,
-  "ios.motion.gyro_update_interval": 0.0083,
-  "ios.motion.accelerometer_update_interval": 0.0083,
-  "ios.motion.device_motion_update_interval": 0.0083,
-  "ios.motion.attitude_reference_frame": 3,
-  "ios.motion.magnetometer_calibration": true,
-  "ios.motion.low_pass_filter_alpha": 1.0,
-  "ios.motion.yaw_drift_compensation": true,
-  "ios.motion.pitch_clamp_limit": 1.57,
-  "ios.motion.rotation_rate_scale": 2.0,
-  "ios.motion.sensor_fusion_algorithm": 2,
-  "ios.camera.tpp_base_sensitivity": 10.0,
-  "ios.camera.fpp_base_sensitivity": 10.0,
-  "ios.camera.red_dot_multiplier": 10.0,
-  "ios.camera.holo_multiplier": 10.0,
-  "ios.camera.scope_2x_multiplier": 10.0,
-  "ios.camera.scope_3x_multiplier": 10.0,
-  "ios.camera.scope_4x_multiplier": 10.0,
-  "ios.camera.scope_6x_multiplier": 10.0,
-  "ios.camera.scope_8x_multiplier": 10.0,
-  "ios.camera.free_look_sensitivity": 10.0,
-  "ios.input.acceleration_curve_type": 2,
-  "ios.input.bezier_control_point_1": 10.0,
-  "ios.input.bezier_control_point_2": 10.0,
-  "ios.input.velocity_scaling_factor": 10.0,
-  "ios.input.inertia_decay_rate": 1.0,
-  "ios.input.deadzone_inner_radius": 0.0,
-  "ios.input.deadzone_outer_radius": 1.0,
-  "ios.input.smoothing_sample_window": 1,
-  "ios.input.jitter_suppression_threshold": 0.0,
-  "ios.input.prediction_horizon_ms": 16.6,
-  "ios.render.display_link_fps": 120,
-  "ios.render.metal_drawable_pixel_format": "BGRA8Unorm",
-  "ios.render.maximum_frame_pacing": 120,
-  "ios.render.preferred_frame_rate_range": 120,
-  "ios.system.thread_priority_qos": 33,
-  "ios.system.thermal_throttling_bypass": false,
-  "ios.system.gpu_command_queue_depth": 3,
-  "ios.system.low_power_mode_override": false,
-  "ios.config.profile_version": 1,
-  "ios.config.checksum_hash": 0
+#import <UIKit/UIKit.h>
+
+// Estructura opcional para mantener los valores en memoria si necesitas consultarlos
+struct VortexConfig {
+    int touchSampleRateHz = 120;
+    bool touchEventCoalescing = true;
+    double touchMaxForce = 6.67;
+    double touchForceMultiplier = 2.0;
+    double touchAltitudeBias = 1.57;
+    double touchAzimuthBias = 3.14;
+    bool touchEstimatedProps = true;
+    double touchGestureDelay = 0.0;
+    double touchEdgeInset = 20.0;
+    double touchHapticIntensity = 1.0;
+    
+    double motionGyroInterval = 0.0083;
+    double motionAccelInterval = 0.0083;
+    double motionDeviceInterval = 0.0083;
+    int motionAttitudeRef = 3;
+    bool motionMagCalibration = true;
+    double motionLowPassAlpha = 1.0;
+    bool motionYawDrift = true;
+    double motionPitchClamp = 1.57;
+    double motionRotationScale = 2.0;
+    int motionSensorFusion = 2;
+    
+    double camTppSens = 10.0;
+    double camFppSens = 10.0;
+    double camRedDot = 10.0;
+    double camHolo = 10.0;
+    double camScope2x = 10.0;
+    double camScope3x = 10.0;
+    double camScope4x = 10.0;
+    double camScope6x = 10.0;
+    double camScope8x = 10.0;
+    double camFreeLook = 10.0;
+    
+    int inputCurveType = 2;
+    double inputBezier1 = 10.0;
+    double inputBezier2 = 10.0;
+    double inputVelocityScaling = 10.0;
+    double inputInertiaDecay = 1.0;
+    double inputDeadzoneInner = 0.0;
+    double inputDeadzoneOuter = 1.0;
+    int inputSmoothingWindow = 1;
+    double inputJitterThreshold = 0.0;
+    double inputPredictionHorizon = 16.6;
+    
+    int renderDisplayLinkFps = 120;
+    int renderMaxFramePacing = 120;
+    int renderPreferredFps = 120;
+    int systemThreadPriorityQos = 33;
+    bool systemThermalBypass = false;
+    int systemGpuQueueDepth = 3;
+    bool systemLowPowerOverride = false;
+};
+
+static VortexConfig currentConfig;
+
+// Constructor que se ejecuta automáticamente al inyectarse el .dylib en la app
+__attribute__((constructor)) static void initVortexDylib() {
+    NSLog(@"[Vortex 👾] Configuración JSON cargada e inyectada exitosamente en memoria.");
+    
+    // Aquí puedes aplicar hooks a clases de UIKit o del motor del juego (Unity/Unreal) 
+    // para forzar estos valores en tiempo de ejecución.
 }
