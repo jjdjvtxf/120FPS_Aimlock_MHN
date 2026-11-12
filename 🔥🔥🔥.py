@@ -18,7 +18,7 @@ try:
     # 3. Ejecutar un comando nativo de XCUITest para deslizar la pantalla de derecha a izquierda
     driver.execute_script("mobile: swipe", {
         "direction": "left",
-        "velocity": 2500
+        "velocity": 10000
     })
     
     print("Gesto ejecutado correctamente.")
